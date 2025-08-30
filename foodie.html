@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavors by Sami</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5dc; /* Beige background */
+}
+
+header {
+  background-color: #000000; /* Black header */
+  color: #f5f5dc; /* Beige text */
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  background-color: #8b4513; /* Saddle brown for navigation */
+  padding: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  gap: 2rem;
+  padding-right: 2rem;
+}
+
+nav a {
+  color: #f5f5dc; /* Beige text */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(245, 245, 220, 0.2);
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5dc;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #8b4513; 
+  color: #f5f5dc;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #654321; 
+}
+
+.features {
+  padding: 3rem;
+  text-align: center;
+  background-color: #f5f5dc;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 1px solid #d2b48c;
+}
+
+.categories-section {
+  padding: 3rem;
+  background-color: #ffffff;
+  text-align: center;
+  border-top: 2px solid #8b4513;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.category-card {
+  background: #f5f5dc;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s;
+  border: 1px solid #d2b48c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 300px;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  background-color: #e6d8b5; 
+}
+
+.category-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.browse-btn {
+  background-color: #8b4513;
+  color: #f5f5dc;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.browse-btn:hover {
+  background-color: #654321;
+}
+
+.comments-section {
+  padding: 3rem;
+  background-color: #ffffff;
+  text-align: center;
+  border-top: 2px solid #8b4513;
+}
+
+.comments-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.comment-form {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d2b48c;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.3);
+}
+
+.submit-btn {
+  background-color: #8b4513;
+  color: #f5f5dc;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #654321;
+}
+
+footer {
+  background-color: #000000;
+  color: #f5f5dc;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 0;
+  }
+
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .categories-section,
+  .features,
+  .comments-section {
+    padding: 2rem 1rem;
+  }
+
+  .categories-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .category-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Flavors by Sami</h1>
+  <p>Where every bite feels like home</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="foodie.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Where every bite feels like home!</h1>
+    <p>Welcome to Flavors by Sami — my little corner where good food meets comfort. I know life gets busy, so I’m here to make things easier — from weekly meal preps to being your personal grocery shopper, or even setting up an intimate dinner just for you. Think of me as your kitchen bestie, making sure every bite feels like home — flavorful, nourishing, and made with love.</p>
+  </div>
+</section>
+
+<section class="categories-section">
+  <h2>Our Categories</h2>
+  <div class="categories-grid">
+    <div class="category-card">
+      <img src="https://plus.unsplash.com/premium_photo-1670895801135-858a7d167ea4?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D0" alt="Snacks" class="category-image">
+      <h3>Infused Snacks</h3>
+      <p>Your party companion, have a good time with some good infused snacks.</p>
+      <a href="snacks.html" class="browse-btn">Browse Snacks</a>
+    </div>
+    <div class="category-card">
+      <img src="https://plus.unsplash.com/premium_photo-1670379647334-5118faeaa8e0?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Drinks" class="category-image">
+      <h3>Drinks</h3>
+      <p>Offering a variety of refreshing beverages to quench your thirst and entice your buds.</p>
+      <a href="drinks.html" class="browse-btn">Browse Drinks</a>
+    </div>
+    <div class="category-card">
+      <img src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Meals" class="category-image">
+      <h3>Meals</h3>
+      <p>Preparing you a tasty meal you won’t forget, made with love and passion.</p>
+      <a href="meals.html" class="browse-btn">Browse Meals</a>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <h2>Why Choose Flavors by Sami?</h2>
+  <div class="feature-grid">
+    <div class="feature">
+      <h3>Quality Hygiene</h3>
+      <p>We take hygiene seriously, following strict standards to ensure every product is prepared with care, cleanliness, and your safety in mind.</p>
+    </div>
+    <div class="feature">
+      <h3>Fresh Ingredients</h3>
+      <p>We use only the freshest ingredients, hand-picked to prepare our meals.</p>
+    </div>
+    <div class="feature">
+      <h3>Quality Service</h3>
+      <p>Place your order at any time and our team will get to you as fast as possible.</p>
+    </div>
+  </div>
+</section>
+
+<section class="comments-section" id="comments">
+  <div class="comments-container">
+    <h2>Share Your Thoughts</h2>
+    <p>We'd love to hear from you! Leave us a comment or feedback.</p>
+    
+    <form class="comment-form" id="commentForm">
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Your email address">
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Share your thoughts, feedback, or questions..."></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+    
+    <div id="formMessage" style="display: none; margin-top: 20px; padding: 10px; border-radius: 5px;"></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>
+    For more information, reach us via
+    <a href="mailto:samiradiaries1@gmail.com">
+      <i class="fa-solid fa-envelope"></i> samiradiaries1@gmail.com
+    </a>
+  </p>
+  <a href="https://wa.me/254111555275" target="_blank" style="text-decoration:none; color:white;">
+    <i class="fa-brands fa-whatsapp" style="color:#25D366; margin-right:8px;"></i>+254111555275
+    <p><i class="fa-solid fa-phone"></i> +254795930230</p>
+  </a>
+  <p>© 2025 Flavors by Sami. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const formMessage = document.getElementById('formMessage');
+    
+    // Simple validation
+    if (!email || !message) {
+      formMessage.style.display = 'block';
+      formMessage.style.backgroundColor = '#ffebee';
+      formMessage.style.color = '#c62828';
+      formMessage.innerHTML = 'Please fill in all fields.';
+      return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    if (!emailRegex.test(email)) {
+      formMessage.style.display = 'block';
+      formMessage.style.backgroundColor = '#ffebee';
+      formMessage.style.color = '#c62828';
+      formMessage.innerHTML = 'Please enter a valid email address.';
+      return;
+    }
+    
+    // Simulate sending email
+    formMessage.style.display = 'block';
+    formMessage.style.backgroundColor = '#e8f5e8';
+    formMessage.style.color = '#2e7d32';
+    formMessage.innerHTML = 'Thank you for your message! We\\'ll get back to you soon.';
+    
+    // Clear the form
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+  });
+</script>
+</body>
+</html>

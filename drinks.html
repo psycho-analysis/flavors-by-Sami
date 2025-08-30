@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinks</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5dc;
+    }
+    
+    header {
+      background-color: #000000;
+      color: #f5f5dc;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    nav {
+      background-color: #8b4513;
+      padding: 0.5rem;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      padding-right: 2rem;
+    }
+    
+    nav a {
+      color: #f5f5dc;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    nav a:hover {
+      background-color: rgba(245, 245, 220, 0.2);
+    }
+    
+    main {
+      flex: 1;
+    }
+
+    .services-section {
+      padding: 3rem;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .service-card {
+      background: #f5f5dc;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #d2b48c;
+    }
+    
+    .service-card h3 {
+      color: #8b4513;
+      margin-bottom: 1rem;
+    }
+    
+    .service-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    footer {
+      background-color: #000000;
+      color: #f5f5dc;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .back-btn {
+      background-color: #8b4513;
+      color: #f5f5dc;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 2rem;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    
+    .back-btn:hover {
+      background-color: #654321;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 0;
+      }
+
+      .services-section {
+        padding: 2rem 1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+
+      .service-card {
+        padding: 1rem;
+      }
+
+      .service-image {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Flavors by Sami</h1>
+    <p>Drinks</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="foodie.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section class="services-section">
+      <h2>Our Drinks</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://plus.unsplash.com/premium_photo-1669807973421-434c4fc146b9?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Muratina" class="service-image">
+          <h3>Muratina</h3>
+          <p>Keep the party going with a supply of muratina, made with natural and fresh fruits, a fair mix of sweet and fun.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://plus.unsplash.com/premium_photo-1708985665217-edf6f05dd828?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2luZ2VyJTIwc2hvdHN8ZW58MHx8MHx8fDA%3D" alt="Ginger Shots" class="service-image">
+          <h3>Ginger Shots</h3>
+          <p>Nothing aids with detoxification and getting rid of inflammation like a ginger shot. A ginger shot a day keeps acne away.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8anVpY2V8ZW58MHx8MHx8fDA%3D" alt="Fruit Juice" class="service-image">
+          <h3>Fresh Fruit Juices</h3>
+          <p>If you are avoiding processed sugars or just going healthy, fresh fruit juice goes a long way. Made with real fruits, one glass will keep you coming for more.</p>
+        </div>
+        <div class="service-card">
+          <img src="https://plus.unsplash.com/premium_photo-1701886274689-859a9c223c8a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Green Juice" class="service-image">
+          <h3>Green Juices</h3>
+          <p>Green juices have countless benefits, from mental relaxation to overall body health — made fresh with vegetables and plants.</p>
+        </div>
+      </div>
+      <a href="foodie.html" class="back-btn">Back to Home</a>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>
+      For more information, reach us via
+      <a href="mailto:samiradiaries1@gmail.com">
+        <i class="fa-solid fa-envelope"></i> samiradiaries1@gmail.com
+      </a>
+    </p>
+    <a href="https://wa.me/254111555275" target="_blank" style="text-decoration:none; color:white;">
+      <i class="fa-brands fa-whatsapp" style="color:#25D366; margin-right:8px;"></i>
+      +254 111 555 275
+    </a>
+    <p><i class="fa-solid fa-phone"></i> +254795930230</p>
+    <p>© 2025 Flavors by Sami. All rights reserved.</p>
+  </footer>
+</body>
+</html>
